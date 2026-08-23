@@ -1,25 +1,10 @@
 // RESEARCH → Thesis Supervisions
 export const thesisSupervisions = [
     {
-        period: "2024",
-        title: "Sensing the Street: Ambient Data and Public Space Design",
-        meta: "MSc — University of Lisbon",
-        description: "Co-supervised. Distinction.",
+        period: "2024 - 2025",
+        title: "'Public Policies in Smart Cities. A Comparative Analysis between Medellín, Helsinki and Singapore'",
+        meta: "Master Thesis Co-supervision",
+        description: "Marianella Iuliano - Master in Managment and Public Administration (Universidad de Cadiz)",
     },
-    {
-        period: "2023",
-        title: "Housing Affordability and Platform Urbanism",
-        meta: "MSc — TU Delft",
-    },
-    {
-        period: "2022",
-        title: "Climate Adaptation in Coastal Neighbourhoods",
-        meta: "BA — University of Porto",
-    },
-    {
-        period: "2021",
-        title: "Civic Tech and Local Democracy",
-        meta: "MSc — Hertie School",
-        description: "Supervised. Best thesis nomination.",
-    },
+
 ];

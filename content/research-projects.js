@@ -6,6 +6,7 @@ export const researchProjects = [
         meta: "Researcher & Project Management Coordinator · NOVA IMS",
         description: "The NexTCity project intends to enhance NOVA IMS’s scientific and technological excellence in city digital twins, namely in all their stages of development: data collection and integration; analysis prediction and simulation; data visualization; and data governance to be used in novel strategies for smart sustainable cities. Funded by the EU (HORIZON-WIDERA-2023-ACCESS-02)",
         tags: ["Digital Twins", "Climate Action", "Urban Governance", "Research", "Project Management", "EU Horizon"],
+        link: { label: "NexTCity Project Website", url: "https://nextcity-project.eu/" },
     },
     {
         period: "2025 - 2026",
@@ -13,7 +14,7 @@ export const researchProjects = [
         meta: "Researcher & Project Management Coordinator · NOVA IMS",
         description: "City4Climate develops a Digital Twin platform to support real-time climate governance in Lisbon, Porto, and Guimarães. By creating 3D virtual models that integrate live data and simulate scenarios such as emissions, air quality, and energy use, the project enables cities to make faster, data-driven decisions. Its goal is to accelerate the path to carbon neutrality while strengthening urban resilience and sustainability. funded by the Agência para a Reforma Tecnológica do Estado (ARTE), the Fundação para a Ciência e a Tecnologia (FCT), and the Plano de Recuperação e Resiliência (PRR)",
         tags: ["Digital Twins", "Climate Action", "Research", "Project Management"],
-        link: { label: "NexTCity Project Website", url: "https://nextcity-project.eu/" },
+        link: { label: "CITY4CLIMATE Project Website", url: "https://www.city4climate.pt/" },
     },
     {
         period: "2020 — 2021",
