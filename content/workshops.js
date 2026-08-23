@@ -1,19 +1,15 @@
 // CAPACITY BUILDING → Workshops
 export const workshops = [
     {
-        period: "2024",
-        title: "Mapping with Communities",
-        meta: "3-day workshop · Athens",
-        description: "Hands-on training on participatory mapping and open-source GIS for local organisations.",
+        period: "Apr. 2026",
+        title: "H3: Why hexagons are so cool and how we can use them to map the world",
+        meta: "Workshop facilitator - NexTCity Summer School 2026, Lisbon (PT)",
+        link: {label: "Access the workshop materials", url: "https://github.com/novacidade-org/H3_Workshop_SS"},
     },
     {
-        period: "2023",
-        title: "Designing Civic Data Dashboards",
-        meta: "Workshop · Smart City Expo, Barcelona",
-    },
-    {
-        period: "2022",
-        title: "Scenario Planning for Climate Adaptation",
-        meta: "Workshop · Municipal Network",
+        period: "Oct. 2025",
+        title: "Participatory Mapping for Smarter Cities",
+        meta: "Workshop facilitator - Geomundus Conference 2025, Lisbon (PT)",
+        description: "",
     },
 ];

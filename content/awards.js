@@ -1,20 +1,9 @@
 // ABOUT → Awards
 export const awards = [
     {
-        period: "2023",
-        title: "European Urban Innovation Award",
-        meta: "Finalist — Smart & Inclusive Cities",
-        description: "Recognised for a citizen-data platform improving access to public services in peripheral neighbourhoods.",
-    },
-    {
-        period: "2020",
-        title: "Young Planner of the Year",
-        meta: "National Association of Planners",
-    },
-    {
         period: "2018",
-        title: "Best Paper Award",
-        meta: "International Conference on Urban Futures",
-        description: "For research on participatory digital planning tools.",
+        title: "2nd prize",
+        meta: "Programme 'S.O.S. Cities', Mendoza (ARG)",
+        description: "Development of a urban masterplan proposal for the regeneration of a mountain area of the city, to de able to adapt to the incoming pressure of tourism",
     },
 ];

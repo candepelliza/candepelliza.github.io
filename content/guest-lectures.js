@@ -1,18 +1,9 @@
 // CAPACITY BUILDING → Guest Lectures
 export const guestLectures = [
     {
-        period: "2024",
-        title: "The Politics of Urban Data",
-        meta: "ETH Zürich · Department of Architecture",
+        period: "2021",
+        title: "A city for everyone: feminist architecture(s) and urbanism(s)",
+        meta: "Universidad Nacional de Cuyo - Architecture Department",
     },
-    {
-        period: "2023",
-        title: "Planning Beyond the Smart City",
-        meta: "Sciences Po · Urban School",
-    },
-    {
-        period: "2022",
-        title: "Participation in the Digital Age",
-        meta: "Bartlett School of Planning, UCL",
-    },
+ 
 ];
