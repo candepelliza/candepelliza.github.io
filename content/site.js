@@ -9,7 +9,7 @@ export const site = {
     aboutPreview: "I am an urban planner, researcher, and consultant focused on urban innovation and the role of technology in shaping cities. Over the past decade I have led planning strategies, taught at universities, advised public institutions, and published research on participatory and data-driven urbanism. My work moves between practice and academia — bridging policy, design, and people.",
     /** Used as the default meta description across the site. */
     metaDescription: "Editorial portfolio of Candela Sol Pelliza — urban planner and researcher working across urban innovation, technology, consultancy, and academic work.",
-    email: "hello@candelapelliza.com",
+    email: "cande.pelliza@gmail.com",
     location: "Lisbon, Portugal",
     /**
      * Optional portrait image on the home hero.
@@ -18,10 +18,9 @@ export const site = {
      */
     portraitImage: undefined,
     socials: [
-        { label: "LinkedIn", url: "https://www.linkedin.com/" },
-        { label: "Google Scholar", url: "https://scholar.google.com/" },
-        { label: "ResearchGate", url: "https://www.researchgate.net/" },
-        { label: "Instagram", url: "https://www.instagram.com/" },
+        { label: "LinkedIn", url: "https://www.linkedin.com/candelasolpelliza" },
+        { label: "Google Scholar", url: "https://scholar.google.com/citations?user=DWlb0d8AAAAJ&hl=en" },
+        { label: "GitHub", url: "https://github.com/candepelliza" },
     ],
 };
 export const navItems = [
