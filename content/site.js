@@ -18,7 +18,7 @@ export const site = {
      */
     portraitImage: undefined,
     socials: [
-        { label: "LinkedIn", url: "https://www.linkedin.com/candelasolpelliza" },
+        { label: "LinkedIn", url: "https://www.linkedin.com/in/candelasolpelliza/" },
         { label: "Google Scholar", url: "https://scholar.google.com/citations?user=DWlb0d8AAAAJ&hl=en" },
         { label: "GitHub", url: "https://github.com/candepelliza" },
     ],
