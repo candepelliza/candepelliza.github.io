@@ -27,7 +27,7 @@ import { researchProjects } from "./content/research-projects.js";
 import { courses } from "./content/courses.js";
 import { workshops } from "./content/workshops.js";
 import { guestLectures } from "./content/guest-lectures.js";
-import { teachingMaterials } from "./content/teaching-materials.js";
+//import { teachingMaterials } from "./content/teaching-materials.js";
 
 // OPTIONAL: set your final public URL (e.g. "https://candelapelliza.com")
 // to emit absolute <link rel="canonical"> + og:url tags. Leave "" to skip.
@@ -530,8 +530,8 @@ writePage(
       ) +
       sectionBlock("Academic Courses", courses, 1) +
       sectionBlock("Workshops", workshops, 1) +
-      sectionBlock("Guest Lectures", guestLectures, 1) +
-      sectionBlock("Teaching Materials", teachingMaterials, 1),
+      sectionBlock("Guest Lectures", guestLectures, 1),
+      //sectionBlock("Teaching Materials", teachingMaterials, 1),
   })
 );
 
