@@ -19,19 +19,19 @@ export const selectedWorks = [
     image: "/images/virarua-hero.png",
     facts: [
       { label: "Role", value: "Concept, urban diagnosis & spatial design" },
-      { label: "Context", value: "'Ideias para Mudar' competition" },
+      { label: "Context", value: "'Ideias à Rua' competition" },
       { label: "Location", value: "Olaias, Lisbon" },
     ],
     body: [
-      "ViraRUA proposes a temporary, low-cost urban intervention for Olaias, developed for the 'Ideias para Mudar' competition, which called for ideas capable of transforming a concrete space in Lisbon through simple but meaningful actions. It focuses on reclaiming an underused street corner — currently occupied by informal car parking — and converting it into a small neighbourhood square that responds to the lack of comfortable public places to sit, meet, play, and park bicycles.",
+      "ViraRUA proposes a temporary, low-cost urban intervention for Olaias, developed for the 'Ideias à Rua' competition, which called for ideas capable of transforming a concrete space in Lisbon through simple but meaningful actions. It focuses on reclaiming an underused street corner, currently occupied by informal car parking, and converting it into a small neighbourhood square that responds to the lack of comfortable public places to sit, meet, play, and park bicycles.",
       "The site is a residual corner near the Mercado de Alfacinha, the local church, ecopoints, existing trees, and a frequent micromobility parking point. Although part of the street, its dimensions exceed what vehicle circulation requires, leaving an ambiguous space used mainly for informal parking. Rather than relying on heavy construction, the proposal uses pavement paint to mark a new collective area within the existing road surface, transforming the perception of the corner so it reads as a place for people rather than parked cars.",
-      "A linear piece of urban furniture combining a bench and a bicycle rack defines a soft boundary with the street: a place to pause and gather that also organises active mobility and reinforces the corner's role as a micromobility node. Following a tactical urbanism approach — site observation, spatial analysis, and visual simulation — the project translates the competition's principles into a neighbourhood-scale intervention that is temporary, replicable, low-cost, and grounded in everyday urban life, showing how small changes in street design can challenge car-dominated residual spaces and create more human-centred public environments.",
+      "A linear piece of urban furniture combining a bench and a bicycle rack defines a soft boundary with the street: a place to pause and gather that also organises active mobility and reinforces the corner's role as a micromobility node. Following a tactical urbanism approach — site observation, spatial analysis, and visual simulation, the project translates the competition's principles into a neighbourhood-scale intervention that is temporary, replicable, low-cost, and grounded in everyday urban life, showing how small changes in street design can challenge car-dominated residual spaces and create more human-centred public environments.",
     ],
     link: { label: "Read the proposal (PDF)", url: "/files/virarua-proposal.pdf" },
   },
   {
     slug: "estrela-pela-felicidade",
-    title: "Estrela pela Felicidade — A Happiness Indicator for Estrela Parish",
+    title: "Estrela pela Felicidade: A Happiness Indicator for Estrela Parish",
     description:
       "A multidimensional happiness and quality-of-life indicator combining objective data with a survey of 400 residents.",
     date: "2025",
@@ -39,7 +39,7 @@ export const selectedWorks = [
     image: "/images/estrela-hero.png",
     gallery: ["/images/estrela-dashboard.png"],
     facts: [
-      { label: "Role", value: "Coordination, methodology, survey & dashboards" },
+      { label: "Role", value: "Coordination, methodology ideation, survey design & dashboards development" },
       { label: "Context", value: "NOVA Cidade — Urban Analytics Lab, NOVA IMS" },
       { label: "Client", value: "Junta de Freguesia de Estrela" },
       {
@@ -54,24 +54,7 @@ export const selectedWorks = [
     ],
     link: { label: "Read the full report (PDF)", url: "/files/estrela-report.pdf" },
   },
-  {
-    slug: "collective-mapping-geomundus",
-    title: "Collective Mapping for Smarter Cities",
-    description:
-      "A hands-on GeoMundus 2025 workshop on collective and collaborative mapping for more equitable, sustainable cities.",
-    date: "2025",
-    tags: ["Collective Mapping", "Workshop", "Participation"],
-    image: "/images/collective-mapping-geomundus-hero.jpg",
-    facts: [
-      { label: "Role", value: "Workshop design & facilitation" },
-      { label: "Context", value: "GeoMundus Conference 2025" },
-    ],
-    body: [
-      "This workshop, taught during the GeoMundus Conference 2025, introduced collective and collaborative mapping as tools for building smarter, more equitable, and more sustainable cities. It explored how community knowledge, citizen-generated data, and digital technologies can be combined to better understand urban experiences and territorial issues.",
-      "The session framed collective mapping as both a process of co-creating horizontal knowledge and a collaborative way of gathering spatial data. It addressed the role of maps as social artifacts — how they can make territorial issues visible, support debate and consensus-building, and include bottom-up perspectives often absent from official representations. It also introduced forms of collaborative urban data collection, from volunteered geographic information and crowdsourced platforms to citizen reporting tools and 'citizens as sensors' approaches, drawing on examples such as OpenStreetMap, Mapillary, and biodiversity sensing initiatives.",
-      "As a hands-on exercise, participants mapped their perceptions of the university campus — the paths they followed or avoided, places chosen for resting, and areas perceived as less comfortable or accessible — using ArcGIS Survey123 to experience first-hand how collective mapping can surface a shared, lived reading of space.",
-    ],
-  },
+
   {
     slug: "portugal-distante",
     title: "Portugal Distante — Accessibility Analysis for Expresso",
@@ -91,8 +74,16 @@ export const selectedWorks = [
       "My contribution spanned coordinating the analytical workflow, developing the methodology, writing and running the geospatial code, validating the data, and producing the accessibility results behind the published pages. These were interpreted together with the journalist to identify the most critical areas and shape the narrative. The series had national visibility, showing how geographic distance and travel time drive unequal access to essential services across the country.",
     ],
     link: {
-      label: "Read the series (Expresso)",
+      label: "Read Health Accessibility Article (Expresso)",
       url: "https://multimedia.expresso.pt/portugaldistantesaude/",
+    },
+      link: {
+      label: "Read Banking Accessibility Article (Expresso)",
+      url: "https://multimedia.expresso.pt/portugaldistantebancos/",
+    },
+      link: {
+      label: "Read Education Accessibility Article (Expresso)",
+      url: "https://multimedia.expresso.pt/portugaldistanteeducacao/",
     },
   },
   {

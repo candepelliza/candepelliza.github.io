@@ -45,4 +45,5 @@ export const workshops = [
       "It combined community knowledge and citizen-generated data with digital mapping tools, giving participants a hands-on introduction to how collaborative mapping can surface a shared, lived reading of urban space.",
     ],
   },
+  
 ];
