@@ -20,35 +20,22 @@ export const talksPressCategories = [
 export const talksPress = [
   {
     slug: "keynote-cities-of-tomorrow",
-    title: "Keynote: Cities of Tomorrow",
+    title: "aa",
     description:
-      "Opening keynote on technology, equity, and the future of urban governance.",
+      "aa",
     date: "2024",
     category: "Invited Talks",
     tags: ["Keynote", "Urban Innovation"],
     facts: [
-      { label: "Event", value: "Cities of Tomorrow Summit" },
-      { label: "Location", value: "Amsterdam" },
+      { label: "Event", value: "aa" },
+      { label: "Location", value: "aa" },
     ],
     body: [
-      "This keynote argued that the next decade of urban innovation must centre public value rather than technological novelty.",
-      "Drawing on field research, it offered a framework for cities to govern data, participation, and infrastructure in the public interest.",
+      "aa.",
     ],
     link: { label: "Watch", url: "#" },
   },
-  {
-    slug: "lecture-public-interest-tech",
-    title: "Public-Interest Technology in Planning",
-    description:
-      "Invited lecture on building civic technology that serves communities first.",
-    date: "2023",
-    category: "Invited Talks",
-    tags: ["Civic Tech", "Lecture"],
-    facts: [{ label: "Host", value: "TU Delft" }],
-    body: [
-      "An invited lecture exploring how planners can commission and design technology that strengthens, rather than bypasses, democratic processes.",
-    ],
-  },
+  
   {
     slug: "icuf-participatory-platforms",
     title: "Participatory Platforms and Their Limits",
@@ -66,19 +53,7 @@ export const talksPress = [
     ],
     link: { label: "Slides", url: "#" },
   },
-  {
-    slug: "aesop-data-commons",
-    title: "Towards Urban Data Commons",
-    description:
-      "Conference presentation on public-interest data infrastructures for cities.",
-    date: "2022",
-    category: "Conference Presentations",
-    tags: ["Data", "Governance"],
-    facts: [{ label: "Conference", value: "AESOP Annual Congress" }],
-    body: [
-      "A presentation outlining the concept of urban data commons and early results from a cross-city research programme.",
-    ],
-  },
+  
   {
     slug: "panel-equitable-smart-cities",
     title: "Panel: Who Owns the Smart City?",
@@ -95,19 +70,7 @@ export const talksPress = [
       "A public panel debating who benefits from urban technology and how cities can keep data accountable to residents.",
     ],
   },
-  {
-    slug: "public-event-night-of-ideas",
-    title: "Night of Ideas: Reclaiming the Street",
-    description:
-      "Public talk and discussion on streets as shared civic infrastructure.",
-    date: "2022",
-    category: "Panels & Public Events",
-    tags: ["Public Space"],
-    facts: [{ label: "Venue", value: "Municipal Library, Lisbon" }],
-    body: [
-      "An evening talk inviting citizens to reimagine streets as places for people, not just movement.",
-    ],
-  },
+  
   {
     slug: "press-guardian-fifteen-minute",
     title: "Feature: Rethinking the Fifteen-Minute City",
@@ -122,20 +85,7 @@ export const talksPress = [
     ],
     link: { label: "Read article", url: "#" },
   },
-  {
-    slug: "press-op-ed-data-rights",
-    title: "Op-ed: Cities Need a Right to Data",
-    description:
-      "Opinion piece on public ownership of urban information infrastructures.",
-    date: "2022",
-    category: "Media & Press",
-    tags: ["Op-ed", "Data"],
-    facts: [{ label: "Outlet", value: "Urban Affairs Review (online)" }],
-    body: [
-      "An op-ed making the case for treating urban data as public infrastructure governed in the common interest.",
-    ],
-    link: { label: "Read op-ed", url: "#" },
-  },
+  
   {
     slug: "podcast-future-of-planning",
     title: "Podcast: The Future of Planning",
@@ -150,17 +100,5 @@ export const talksPress = [
     ],
     link: { label: "Listen", url: "#" },
   },
-  {
-    slug: "interview-civic-tech",
-    title: "Interview: Designing Civic Technology",
-    description:
-      "An interview on building digital tools that strengthen local democracy.",
-    date: "2023",
-    category: "Interviews / Podcasts",
-    tags: ["Interview", "Civic Tech"],
-    facts: [{ label: "Publication", value: "Design & Society" }],
-    body: [
-      "An interview discussing principles for human-centred, accountable civic technology.",
-    ],
-  },
+ 
 ];
