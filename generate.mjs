@@ -6,8 +6,9 @@
 // so the output works at a project URL (user.github.io/repo), a user site,
 // or a custom domain with no configuration.
 //
-// To edit CONTENT: change the files in /content, then re-run this script.
-// To edit DESIGN: change /public/styles.css.
+// Same architecture as before; the templates below emit the "Editorial
+// Studio" aesthetic. To edit CONTENT: change the files in /content, then
+// re-run this script. To edit DESIGN: change /public/styles.css.
 // ---------------------------------------------------------------------------
 
 import { fileURLToPath } from "node:url";
@@ -27,7 +28,7 @@ import { researchProjects } from "./content/research-projects.js";
 import { courses } from "./content/courses.js";
 import { workshops } from "./content/workshops.js";
 import { guestLectures } from "./content/guest-lectures.js";
-//import { teachingMaterials } from "./content/teaching-materials.js";
+import { teachingMaterials } from "./content/teaching-materials.js";
 
 // OPTIONAL: set your final public URL (e.g. "https://candelapelliza.com")
 // to emit absolute <link rel="canonical"> + og:url tags. Leave "" to skip.
@@ -50,7 +51,7 @@ const esc = (s = "") =>
 // Relative path prefix for a page at the given directory depth.
 const pfx = (depth) => (depth === 0 ? "" : "../".repeat(depth));
 
-// Turn a root path ("/about") into a relative link for the current depth.
+// Turn a root path ("/cv") into a relative link for the current depth.
 const linkTo = (path, depth) => {
   const p = pfx(depth);
   if (path === "/") return p === "" ? "./" : p;
@@ -67,6 +68,17 @@ const resolveUrl = (url, depth) => {
 
 const isExternal = (url) => /^(https?:|mailto:)/.test(url || "");
 
+// A staggered scroll-reveal delay (used as an inline CSS var).
+const rd = (i = 0) => (i ? ` style="--rd:${i * 90}ms"` : "");
+
+// Location-like fact used as a card's meta line (mirrors the design).
+const cardMeta = (entry) => {
+  const f = (entry.facts || []).find((x) =>
+    ["location", "place", "venue", "city"].includes(x.label.toLowerCase())
+  );
+  return (f && f.value) || entry.category || "";
+};
+
 // ---------- shared partials ----------
 function tagList(tags) {
   if (!tags || tags.length === 0) return "";
@@ -79,85 +91,82 @@ function tagList(tags) {
   return `<ul class="taglist">${items}</ul>`;
 }
 
-function imageSlot({ src, alt, label, ratio, depth, wrapClass = "" }) {
+function imageSlot({ src, alt, label, ratio, depth, grayscale = false }) {
   if (src) {
-    return `<div class="frame ${ratio} ${wrapClass}"><img src="${resolveUrl(src, depth)}" alt="${esc(alt)}" loading="lazy"></div>`;
+    return `<div class="frame ${ratio}${grayscale ? " grayscale" : ""}"><img src="${resolveUrl(src, depth)}" alt="${esc(alt)}" loading="lazy"></div>`;
   }
-  return `<div class="placeholder ${ratio} ${wrapClass}" role="img" aria-label="${esc(alt)}">
-      <span class="ph-tl label-type">Fig.</span>
+  return `<div class="placeholder ${ratio}" role="img" aria-label="${esc(alt)}">
+      <span class="ph-tl mono-type">Fig.</span>
       <span class="ph-br meta-type">\u25CB ${esc(label || "Image")}</span>
-      <span class="ph-c label-type">${esc(label || "Image")}</span>
+      <span class="mono-type">${esc(label || "Image")}</span>
     </div>`;
 }
 
 function header(active, depth) {
-  const nav = navItems
-    .map((item) => {
-      const cls = item.to === active ? "is-active" : "";
-      return `<a href="${linkTo(item.to, depth)}" class="${cls}">${esc(item.label)}</a>`;
-    })
-    .join("");
-  const mobile = navItems
-    .map((item) => {
-      const cls = item.to === active ? "is-active" : "";
-      return `<a href="${linkTo(item.to, depth)}" class="${cls}">${esc(item.label)}</a>`;
-    })
-    .join("");
+  const links = (cls) =>
+    navItems
+      .map((item) => {
+        const isActive = item.to === active ? " is-active" : "";
+        return `<a href="${linkTo(item.to, depth)}" class="mono-type${isActive}${cls}">${esc(item.label)}</a>`;
+      })
+      .join("");
   return `<header class="site-header">
     <div class="container">
       <a href="${linkTo("/", depth)}" class="logo" aria-label="${esc(site.name)} — home">
         <span class="logo-text">${esc(site.name.toLowerCase())}</span>
         <span class="accent-square" aria-hidden="true"></span>
       </a>
-      <nav class="main-nav">${nav}</nav>
-      <button type="button" class="nav-toggle label-type" data-nav-toggle aria-label="Toggle menu" aria-expanded="false">Menu</button>
+      <nav class="main-nav">${links("")}</nav>
+      <button type="button" class="nav-toggle mono-type" data-nav-toggle aria-label="Toggle menu" aria-expanded="false">Menu</button>
     </div>
     <nav class="mobile-nav" data-mobile-nav>
-      <div class="container">${mobile}</div>
+      <div class="container">${links("")}</div>
     </nav>
   </header>`;
 }
 
 function footer(depth) {
   const nav = navItems
-    .map((i) => `<a href="${linkTo(i.to, depth)}">${esc(i.label)}</a>`)
+    .map((i) => `<a href="${linkTo(i.to, depth)}" class="mono-type">${esc(i.label)}</a>`)
     .join("");
   const socials = site.socials
     .map(
       (s) =>
-        `<a href="${esc(s.url)}" target="_blank" rel="noreferrer">${esc(s.label)}</a>`
+        `<a href="${esc(s.url)}" target="_blank" rel="noreferrer" class="mono-type">${esc(s.label)}</a>`
     )
     .join("");
   return `<footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div>
-          <p class="label-type footer-label">Get in touch</p>
+          <p class="footer-label">[ get in touch ]</p>
           <a href="mailto:${esc(site.email)}" class="footer-email">${esc(site.email)}</a>
-          <p class="footer-location">${esc(site.location)}</p>
+          <p class="footer-location mono-type">${esc(site.location)}</p>
         </div>
         <div class="footer-cols">
           <nav class="footer-col">
-            <p class="label-type footer-label">Navigate</p>
+            <p class="footer-label">[ navigate ]</p>
             ${nav}
           </nav>
           <div class="footer-col">
-            <p class="label-type footer-label">Elsewhere</p>
+            <p class="footer-label">[ elsewhere ]</p>
             ${socials}
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>\u00A9 ${YEAR} ${esc(site.name)}. All rights reserved.</p>
+      <div class="footer-bottom mono-type">
+        <p>\u00A9 ${YEAR} ${esc(site.name)}</p>
         <p>${esc(site.role)}</p>
       </div>
+    </div>
+    <div class="footer-wordmark">
+      <p>${esc(site.name)} — ${esc(site.name)} —</p>
     </div>
   </footer>`;
 }
 
 function layout({ title, description, path, depth, active, body, jsonLd = [] }) {
-  const canonical =
-    SITE_URL && path ? SITE_URL.replace(/\/$/, "") + path : "";
+  const canonical = SITE_URL && path ? SITE_URL.replace(/\/$/, "") + path : "";
   const person = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -169,10 +178,7 @@ function layout({ title, description, path, depth, active, body, jsonLd = [] }) 
     sameAs: site.socials.map((s) => s.url),
   };
   const ld = [person, ...jsonLd]
-    .map(
-      (obj) =>
-        `<script type="application/ld+json">${JSON.stringify(obj)}</script>`
-    )
+    .map((obj) => `<script type="application/ld+json">${JSON.stringify(obj)}</script>`)
     .join("\n    ");
 
   return `<!DOCTYPE html>
@@ -191,7 +197,7 @@ function layout({ title, description, path, depth, active, body, jsonLd = [] }) 
     ${canonical ? `<link rel="canonical" href="${esc(canonical)}" />\n    <meta property="og:url" content="${esc(canonical)}" />` : ""}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800;900&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" />
     <link rel="stylesheet" href="${pfx(depth)}styles.css" />
     ${ld}
   </head>
@@ -208,51 +214,86 @@ ${body}
 </html>`;
 }
 
-// ---------- reusable blocks ----------
-function horizontalCard(entry, section, depth) {
-  const href = linkTo(`${section}/${entry.slug}`, depth);
-  return `<a href="${href}" class="hcard">
-    <article class="hcard-grid">
-      ${imageSlot({ src: entry.image, alt: entry.title, label: entry.category || "Plate", ratio: "ratio-4x5", depth })}
-      <div class="hcard-body">
-        <h3 class="hcard-title">${esc(entry.title)}</h3>
-        <p class="hcard-desc">${esc(entry.description)}</p>
-        <div class="hcard-foot">${tagList(entry.tags)}</div>
-      </div>
-    </article>
-  </a>`;
+// ---------- index-row building blocks ----------
+// One editorial index row: text on the left, an image plate on the right when
+// the entry has (or is forced to show) one.
+function indexRowInner({ period, title, meta, description, tags, details, size, image, plate, depth }) {
+  const hasPlate = Boolean(image) || plate;
+  const main = `<div class="index-row-main">
+        ${period ? `<p class="period mono-type reveal">${esc(period)}</p>` : ""}
+        <h3 class="index-row-title size-${size} reveal"${rd(1)}>${esc(title)}</h3>
+        ${meta ? `<p class="meta mono-type reveal"${rd(2)}>${esc(meta)}</p>` : ""}
+        ${description ? `<p class="desc reveal"${rd(3)}>${esc(description)}</p>` : ""}
+        ${
+          (tags && tags.length) || details
+            ? `<div class="index-row-foot reveal"${rd(4)}>${tagList(tags)}${details || ""}</div>`
+            : ""
+        }
+      </div>`;
+  const platehtml = hasPlate
+    ? `<div class="index-row-plate reveal"${rd(1)}>${imageSlot({ src: image, alt: title, label: "Plate", ratio: "ratio-4x3", depth, grayscale: true })}</div>`
+    : "";
+  return `${main}${platehtml}`;
 }
 
 function staticEntryList(entries, depth) {
   const rows = entries
     .map((entry) => {
-      const period = entry.period
-        ? `<p class="entry-period">${esc(entry.period)}</p>`
+      const details = entry.link
+        ? `<a href="${resolveUrl(entry.link.url, depth)}" ${isExternal(entry.link.url) ? 'target="_blank" rel="noreferrer"' : ""} class="mono-type link-underline">${esc(entry.link.label)} \u2192</a>`
         : "";
-      const meta = entry.meta
-        ? `<p class="entry-meta">${esc(entry.meta)}</p>`
-        : "";
-      const desc = entry.description
-        ? `<p class="entry-desc">${esc(entry.description)}</p>`
-        : "";
-      let foot = "";
-      if ((entry.tags && entry.tags.length) || entry.link) {
-        const link = entry.link
-          ? `<a href="${resolveUrl(entry.link.url, depth)}" ${isExternal(entry.link.url) ? 'target="_blank" rel="noreferrer"' : ""} class="label-type link-underline">${esc(entry.link.label)} \u2192</a>`
-          : "";
-        foot = `<div class="entry-foot">${tagList(entry.tags)}${link}</div>`;
-      }
-      return `<li class="entry">${period}<h3 class="entry-title">${esc(entry.title)}</h3>${meta}${desc}${foot}</li>`;
+      const hasPlate = Boolean(entry.image);
+      return `<div class="index-row${hasPlate ? " has-plate" : ""}" data-active="false">
+      ${indexRowInner({
+        period: entry.period,
+        title: entry.title,
+        meta: entry.meta,
+        description: entry.description,
+        tags: entry.tags,
+        details,
+        size: "md",
+        image: entry.image,
+        plate: false,
+        depth,
+      })}
+    </div>`;
     })
     .join("");
-  return `<ul class="entry-list">${rows}</ul>`;
+  return `<div class="index-list">${rows}</div>`;
 }
 
+function horizontalCard(entry, section, depth) {
+  const href = linkTo(`${section}/${entry.slug}`, depth);
+  const details = `<span class="read-more mono-type">Read \u2192</span>`;
+  return `<a href="${href}" class="hcard">
+      <div class="index-row has-plate" data-active="false">
+        ${indexRowInner({
+          period: entry.date,
+          title: entry.title,
+          meta: cardMeta(entry),
+          description: entry.description,
+          tags: entry.tags,
+          details,
+          size: "lg",
+          image: entry.image,
+          plate: true,
+          depth,
+        })}
+      </div>
+    </a>`;
+}
+
+function sectionHeading(title) {
+  return `<h2 class="section-heading reveal">${esc(title)}</h2>`;
+}
+
+// A static subsection. Renders nothing when there are no entries.
 function sectionBlock(title, entries, depth) {
+  if (!entries || entries.length === 0) return "";
   return `<section class="section">
     <div class="container">
-      <h2 class="section-heading">${esc(title)}</h2>
-      ${staticEntryList(entries, depth)}
+      ${sectionHeading(title)}
+      <div class="section-body">${staticEntryList(entries, depth)}</div>
     </div>
   </section>`;
 }
@@ -261,8 +302,8 @@ function pageHeader(title, intro) {
   return `<header class="page-header">
     <div class="container">
       <div class="page-header-grid">
-        <h1 class="page-title">${esc(title)}</h1>
-        ${intro ? `<p class="page-intro">${esc(intro)}</p>` : ""}
+        <h1 class="page-title reveal"${rd(1)}>${esc(title)}</h1>
+        ${intro ? `<p class="page-intro reveal"${rd(2)}>${esc(intro)}</p>` : ""}
       </div>
     </div>
   </header>`;
@@ -283,16 +324,16 @@ function cardDetail(entry, { backTo, backLabel, label }, depth) {
           )
           .join("")}</div>`
       : "";
-  const body = entry.body.map((p) => `<p>${esc(p)}</p>`).join("");
+  const body = entry.body.map((p) => `<p class="reveal">${esc(p)}</p>`).join("");
   const link = entry.link
-    ? `<a href="${resolveUrl(entry.link.url, depth)}" ${isExternal(entry.link.url) ? 'target="_blank" rel="noreferrer"' : ""} class="label-type link-underline detail-link">${esc(entry.link.label)} \u2192</a>`
+    ? `<a href="${resolveUrl(entry.link.url, depth)}" ${isExternal(entry.link.url) ? 'target="_blank" rel="noreferrer"' : ""} class="mono-type link-underline detail-link">${esc(entry.link.label)} \u2192</a>`
     : "";
   const facts =
     entry.facts && entry.facts.length
       ? `<aside class="facts"><hr /><dl>${entry.facts
           .map(
             (f) =>
-              `<div class="fact"><dt class="label-type">${esc(f.label)}</dt><dd>${esc(f.value)}</dd></div>`
+              `<div class="fact reveal"><dt class="mono-type">${esc(f.label)}</dt><dd>${esc(f.value)}</dd></div>`
           )
           .join("")}</dl></aside>`
       : "";
@@ -300,15 +341,15 @@ function cardDetail(entry, { backTo, backLabel, label }, depth) {
     <header class="detail-header">
       <div class="container">
         <div class="detail-topbar">
-          <a href="${linkTo(backTo, depth)}" class="label-type back-link"><span class="accent-square" aria-hidden="true"></span>${esc(backLabel)}</a>
-          <p class="meta-type" style="color:var(--muted-foreground)">${esc(label || entry.category || "")}</p>
+          <a href="${linkTo(backTo, depth)}" class="back-link mono-type"><span class="accent-square" aria-hidden="true"></span>${esc(backLabel)}</a>
+          <p class="detail-label mono-type">${esc(label || entry.category || "")}</p>
         </div>
-        <h1 class="detail-title">${esc(entry.title)}</h1>
-        <p class="detail-desc">${esc(entry.description)}</p>
+        <h1 class="detail-title reveal"${rd(1)}>${esc(entry.title)}</h1>
+        <p class="detail-desc reveal"${rd(2)}>${esc(entry.description)}</p>
       </div>
     </header>
     <div class="container">
-      <div class="detail-hero">${imageSlot({ src: entry.image, alt: entry.title, label: entry.category || "Plate", ratio: "ratio-16x9", depth })}</div>
+      <div class="detail-hero reveal">${imageSlot({ src: entry.image, alt: entry.title, label: entry.category || "Plate", ratio: "ratio-16x9", depth })}</div>
       ${gallery}
       <div class="detail-body-grid">
         <div class="detail-body">
@@ -331,10 +372,10 @@ function homeBody(depth) {
   const line2 = words.slice(-1).join(" ").toLowerCase();
 
   const heroLinks = [
-    `<a href="mailto:${esc(site.email)}" class="label-type link-underline">${esc(site.email)}</a>`,
+    `<a href="mailto:${esc(site.email)}" class="mono-type link-underline">${esc(site.email)}</a>`,
     ...site.socials.map(
       (s) =>
-        `<a href="${esc(s.url)}" target="_blank" rel="noreferrer" class="label-type link-muted">${esc(s.label)}</a>`
+        `<a href="${esc(s.url)}" target="_blank" rel="noreferrer" class="mono-type link-muted">${esc(s.label)}</a>`
     ),
   ].join("");
 
@@ -356,12 +397,13 @@ function homeBody(depth) {
     <div class="container">
       <div class="hero-grid">
         <div>
-          <h1 class="hero-name">${esc(line1)}<br />${esc(line2)}<span class="accent-dot">.</span></h1>
-          <p class="hero-tagline">${esc(site.tagline)}</p>
-          <div class="hero-links">${heroLinks}</div>
+          <p class="hero-eyebrow mono-type reveal">[ ${esc(site.role)} ]</p>
+          <h1 class="hero-name reveal"${rd(1)}>${esc(line1)}<br />${esc(line2)}<span class="accent-dot">.</span></h1>
+          <p class="hero-tagline reveal"${rd(2)}>${esc(site.tagline)}</p>
+          <div class="hero-links reveal"${rd(3)}>${heroLinks}</div>
         </div>
         <div>
-          ${imageSlot({ src: site.portraitImage, alt: `Portrait of ${site.name}`, label: "Portrait", ratio: "ratio-3x4", depth, wrapClass: "portrait-slot" })}
+          ${imageSlot({ src: site.portraitImage, alt: `Portrait of ${site.name}`, label: "Portrait", ratio: "ratio-3x4 portrait-slot", depth })}
         </div>
       </div>
     </div>
@@ -369,19 +411,19 @@ function homeBody(depth) {
 
   <section class="section rule">
     <div class="container">
-      <h2 class="section-heading">About</h2>
+      ${sectionHeading("About")}
       <div class="about-grid">
-        <p class="about-text">${esc(site.aboutPreview)}</p>
-        <a href="${linkTo("/about", depth)}" class="label-type link-underline nowrap">More about me \u2192</a>
+        <p class="about-text reveal">${esc(site.aboutPreview)}</p>
+        <a href="${linkTo("/cv", depth)}" class="mono-type link-underline nowrap">More about me \u2192</a>
       </div>
     </div>
   </section>
 
   <section class="section rule">
     <div class="container">
-      <h2 class="section-heading">Selected Works</h2>
+      ${sectionHeading("Selected Works")}
       <div class="viewall" style="margin:1.5rem 0 0.5rem">
-        <a href="${linkTo("/selected-works", depth)}" class="label-type link-muted">View all \u2192</a>
+        <a href="${linkTo("/selected-works", depth)}" class="mono-type link-muted">View all \u2192</a>
       </div>
       <div>${worksCards}</div>
     </div>
@@ -389,19 +431,19 @@ function homeBody(depth) {
 
   <section class="section rule">
     <div class="container">
-      <h2 class="section-heading">Talks &amp; Press</h2>
+      ${sectionHeading("Talks & Press")}
       <div class="talks-list">${talkRows}</div>
       <div class="viewall" style="margin-top:1.25rem">
-        <a href="${linkTo("/talks-press", depth)}" class="label-type link-muted">View all \u2192</a>
+        <a href="${linkTo("/talks-press", depth)}" class="mono-type link-muted">View all \u2192</a>
       </div>
     </div>
   </section>
 
   <section class="section">
     <div class="container">
-      <h2 class="section-heading">Contact</h2>
+      ${sectionHeading("Contact")}
       <div class="contact-grid">
-        <h3 class="contact-title">let&#39;s<br />talk<span class="accent-dot">.</span></h3>
+        <h3 class="contact-title reveal">let&#39;s<br />talk<span class="accent-dot">.</span></h3>
         <div>
           <p class="contact-lead">For collaborations, commissions, talks, or research enquiries, send a message below.</p>
           <form class="form" data-contact-form data-email="${esc(site.email)}">
@@ -421,7 +463,7 @@ function homeBody(depth) {
                 <textarea id="cf-message" rows="4" required placeholder="Tell me about your project or enquiry\u2026"></textarea>
               </div>
             </div>
-            <button type="submit" class="btn"><span class="label-type">Send message</span></button>
+            <button type="submit" class="btn"><span class="mono-type">Send message</span></button>
           </form>
         </div>
       </div>
@@ -431,7 +473,7 @@ function homeBody(depth) {
 
 function talksIndexBody(depth) {
   return talksPressCategories
-    .map((category, ci) => {
+    .map((category) => {
       const entries = talksPress.filter((e) => e.category === category);
       if (entries.length === 0) return "";
       const cards = entries
@@ -439,12 +481,36 @@ function talksIndexBody(depth) {
         .join("");
       return `<section class="section">
         <div class="container">
-          <h2 class="section-heading">${esc(category)}</h2>
-          <div style="margin-top:2rem">${cards}</div>
+          ${sectionHeading(category)}
+          <div class="section-body">${cards}</div>
         </div>
       </section>`;
     })
     .join("");
+}
+
+function capacityBody(depth) {
+  const workshopSection =
+    workshops && workshops.length
+      ? `<section class="section">
+          <div class="container">
+            ${sectionHeading("Workshops")}
+            <div class="section-body">${workshops
+              .map((e) => horizontalCard(e, "/workshops", depth))
+              .join("")}</div>
+          </div>
+        </section>`
+      : "";
+  return (
+    pageHeader(
+      "capacity building",
+      "Courses, workshops, and lectures that share methods and tools for more participatory, data-informed urban practice."
+    ) +
+    sectionBlock("Academic Courses", courses, depth) +
+    workshopSection +
+    sectionBlock("Guest Lectures", guestLectures, depth) +
+    sectionBlock("Teaching Materials", teachingMaterials, depth)
+  );
 }
 
 // ---------- write helpers ----------
@@ -473,18 +539,18 @@ writePage(
   })
 );
 
-// About (depth 1)
+// CV (depth 1)
 writePage(
-  "about",
+  "cv",
   layout({
-    title: `About — ${site.name}`,
+    title: `CV — ${site.name}`,
     description:
       "Professional experience, education, awards, and development of Candela Sol Pelliza — urban planner and researcher.",
-    path: "/about",
+    path: "/cv",
     depth: 1,
-    active: "/about",
+    active: "/cv",
     body:
-      pageHeader("about", site.aboutPreview) +
+      pageHeader("cv", site.aboutPreview) +
       sectionBlock("Professional Experience", professionalExperience, 1) +
       sectionBlock("Education", education, 1) +
       sectionBlock("Awards", awards, 1) +
@@ -523,17 +589,39 @@ writePage(
     path: "/capacity-building",
     depth: 1,
     active: "/capacity-building",
-    body:
-      pageHeader(
-        "capacity building",
-        "Courses, workshops, and lectures that share methods and tools for more participatory, data-informed urban practice."
-      ) +
-      sectionBlock("Academic Courses", courses, 1) +
-      sectionBlock("Workshops", workshops, 1) +
-      sectionBlock("Guest Lectures", guestLectures, 1),
-      //sectionBlock("Teaching Materials", teachingMaterials, 1),
+    body: capacityBody(1),
   })
 );
+
+// Workshop detail pages (depth 2)
+for (const workshop of workshops) {
+  writePage(
+    `workshops/${workshop.slug}`,
+    layout({
+      title: `${workshop.title} — ${site.name}`,
+      description: workshop.description,
+      path: `/workshops/${workshop.slug}`,
+      depth: 2,
+      active: "/capacity-building",
+      body: cardDetail(
+        workshop,
+        { backTo: "/capacity-building", backLabel: "Capacity Building", label: "Workshop" },
+        2
+      ),
+      jsonLd: [
+        {
+          "@context": "https://schema.org",
+          "@type": "CreativeWork",
+          name: workshop.title,
+          description: workshop.description,
+          dateCreated: workshop.date,
+          author: { "@type": "Person", name: site.name },
+          keywords: workshop.tags.join(", "),
+        },
+      ],
+    })
+  );
+}
 
 // Selected Works index (depth 1)
 writePage(
@@ -548,7 +636,7 @@ writePage(
     body:
       pageHeader(
         "selected works",
-        "A selection of projects spanning master planning, urban innovation, technology, and consultancy."
+        "A selection of projects spanning urban planning, urban innovation, technology, and consultancy."
       ) +
       `<section class="section"><div class="container">${selectedWorks
         .map((e) => horizontalCard(e, "/selected-works", 1))
@@ -616,7 +704,7 @@ for (const entry of talksPress) {
       active: "/talks-press",
       body: cardDetail(
         entry,
-        { backTo: "/talks-press", backLabel: "Talks & Press" },
+        { backTo: "/talks-press", backLabel: "Talks & Press", label: entry.category },
         2
       ),
       jsonLd: [
@@ -646,7 +734,7 @@ fs.writeFileSync(
     body: `<div class="notfound"><div>
       <h1>404</h1>
       <p>The page you're looking for doesn't exist or has been moved.</p>
-      <p style="margin-top:1.5rem"><a href="${linkTo("/", 0)}" class="btn"><span class="label-type">Go home</span></a></p>
+      <p style="margin-top:1.5rem"><a href="${linkTo("/", 0)}" class="btn"><span class="mono-type">Go home</span></a></p>
     </div></div>`,
   }),
   "utf8"
@@ -657,10 +745,12 @@ fs.writeFileSync(join(OUT, ".nojekyll"), "", "utf8");
 
 // ---------- report ----------
 const pageCount =
-  6 + selectedWorks.length + talksPress.length + 1; // fixed pages + details + 404
+  6 + selectedWorks.length + talksPress.length + workshops.length + 1;
 console.log(`Built ${pageCount} pages into /docs`);
-console.log(`  • Home, About, Selected Works, Research, Capacity Building, Talks & Press`);
-console.log(`  • ${selectedWorks.length} project pages, ${talksPress.length} talks/press pages, 404`);
+console.log("  • Home, CV, Selected Works, Research, Capacity Building, Talks & Press");
+console.log(
+  `  • ${selectedWorks.length} project pages, ${workshops.length} workshop pages, ${talksPress.length} talks/press pages, 404`
+);
 if (!SITE_URL) {
   console.log("Note: SITE_URL is empty — canonical/og:url tags omitted (optional).");
 }
