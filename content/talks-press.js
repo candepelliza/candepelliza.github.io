@@ -14,45 +14,49 @@ export const talksPressCategories = [
   "Panels & Public Events",
   "Media & Press",
   "Interviews / Podcasts",
+  "Panel Moderator",
 ];
 
 
 export const talksPress = [
-  {
-    slug: "keynote-cities-of-tomorrow",
-    title: "aa",
+
+    {
+    slug: "panel-smart-port-lx",
+    title: "Smart Port Lx: Smart Port, Intelligent City – Opportunities and Challenges in the Port-City Relationship",
     description:
-      "aa",
-    date: "2024",
-    category: "Invited Talks",
-    tags: ["Keynote", "Urban Innovation"],
+      "Panel mdoerator of the discussion regarding the role of the Smart port Lx project as a catalyzer for the development of the city of Lisbon and its port, and the opportunities and challenges of the port-city relationship.",
+    date: "2026",
+    category: "Panel Moderator",
+    tags: ["Smart City", "Smart Port"],
     facts: [
-      { label: "Event", value: "aa" },
-      { label: "Location", value: "aa" },
+      { label: "Event", value: "Smart Cities Summit Portugal 2026" },
+      { label: "Location", value: "Lisbon (PT)" },
     ],
     body: [
-      "aa.",
-    ],
-    link: { label: "Watch", url: "#" },
-  },
-  
-  {
-    slug: "icuf-participatory-platforms",
-    title: "Participatory Platforms and Their Limits",
-    description:
-      "Conference paper presenting a five-city comparison of digital engagement tools.",
-    date: "2023",
-    category: "Conference Presentations",
-    tags: ["Participation", "Research"],
-    facts: [
-      { label: "Conference", value: "Intl. Conference on Urban Futures" },
-      { label: "Location", value: "Vienna" },
-    ],
-    body: [
-      "This presentation shared findings from a comparative study of online participation platforms, highlighting where digital tools widen — and where they narrow — civic engagement.",
+      "Panel mdoerator of the discussion regarding the role of the Smart port Lx project as a catalyzer for the development of the city of Lisbon and its port, and the opportunities and challenges of the port-city relationship.",
     ],
     link: { label: "Slides", url: "#" },
   },
+
+  {
+    slug: "roundtable-social-environmental-innovation",
+    title: "Roundtable:Social & Environmental Innovation in the Digital Era",
+    description:
+      "Participant of the roundtable discussion about Social & Environmental Innovation in the Digital Era",
+    date: "2025",
+    category: "Invited Talks",
+    tags: ["Roundtable", "Urban Innovation"],
+    facts: [
+      { label: "Event", value: "IBS Anniversary" },
+      { label: "Location", value: "Universidade do Minho, Braga (PT)" },
+    ],
+    body: [
+      "Participant of the roundtable discussion about Social & Environmental Innovation in the Digital Era, presenting the role of Urban Digital Twins in shaping the future of cities.",
+    ],
+    link: { label: "Digital twins", url: "Urban innovation" },
+  },
+  
+
   
   {
     slug: "panel-equitable-smart-cities",
@@ -71,34 +75,20 @@ export const talksPress = [
     ],
   },
   
+
   {
-    slug: "press-guardian-fifteen-minute",
-    title: "Feature: Rethinking the Fifteen-Minute City",
+    slug: "degenerando-la-u-podcast",
+    title: "'Degenerando la U' Podcast",
     description:
-      "Quoted in a long-form feature on proximity-based urban planning.",
-    date: "2023",
-    category: "Media & Press",
-    tags: ["Feature", "Mobility"],
-    facts: [{ label: "Outlet", value: "International Daily" }],
+      "Podcast addressing gender inqeualities in the academic and professional work at different disciplines.",
+    date: "2019",
+    category: "Podcasts",
+    tags: ["Podcast", "Feminism"],
+    facts: [{ label: "Role", value: "Creator and Broadcaster" }],
     body: [
-      "A feature article on the promise and pitfalls of the fifteen-minute city, with commentary on implementation and equity.",
+      " Winner of the 'UNCuyo Students Initiatives Fund",
     ],
-    link: { label: "Read article", url: "#" },
-  },
-  
-  {
-    slug: "podcast-future-of-planning",
-    title: "Podcast: The Future of Planning",
-    description:
-      "A conversation on research, practice, and the changing role of the planner.",
-    date: "2024",
-    category: "Interviews / Podcasts",
-    tags: ["Podcast", "Practice"],
-    facts: [{ label: "Show", value: "The Urbanist" }],
-    body: [
-      "A wide-ranging interview on moving between academia and practice, and what it means to plan for uncertainty.",
-    ],
-    link: { label: "Listen", url: "#" },
+    link: { label: "Listen at spotify (Spanish only)", url: "https://open.spotify.com/show/1uprihOeIuO25hy3Xd8LDh?si=5c9dda30e0f34ae6" },
   },
  
 ];
