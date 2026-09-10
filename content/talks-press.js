@@ -22,9 +22,9 @@ export const talksPress = [
 
     {
     slug: "panel-smart-port-lx",
-    title: "Smart Port Lx: Smart Port, Intelligent City – Opportunities and Challenges in the Port-City Relationship",
+    title: "Smart Port Lx ",
     description:
-      "Panel mdoerator of the discussion regarding the role of the Smart port Lx project as a catalyzer for the development of the city of Lisbon and its port, and the opportunities and challenges of the port-city relationship.",
+      "Roundtable: Smart Port Lx: Smart Port, Intelligent City – Opportunities and Challenges in the Port-City Relationship",
     date: "2026",
     category: "Panel Moderator",
     tags: ["Smart City", "Smart Port"],
@@ -33,14 +33,14 @@ export const talksPress = [
       { label: "Location", value: "Lisbon (PT)" },
     ],
     body: [
-      "Panel mdoerator of the discussion regarding the role of the Smart port Lx project as a catalyzer for the development of the city of Lisbon and its port, and the opportunities and challenges of the port-city relationship.",
+      "Panel moderator of the discussion regarding the role of the Smart port Lx project as a catalyzer for the development of the city of Lisbon and its port, and the opportunities and challenges of the port-city relationship.",
     ],
     link: { label: "Slides", url: "#" },
   },
 
   {
     slug: "roundtable-social-environmental-innovation",
-    title: "Roundtable:Social & Environmental Innovation in the Digital Era",
+    title: "Roundtable: Social & Environmental Innovation in the Digital Era",
     description:
       "Participant of the roundtable discussion about Social & Environmental Innovation in the Digital Era",
     date: "2025",
@@ -55,25 +55,25 @@ export const talksPress = [
     ],
     link: { label: "Digital twins", url: "Urban innovation" },
   },
-  
 
-  
   {
-    slug: "panel-equitable-smart-cities",
-    title: "Panel: Who Owns the Smart City?",
+    slug: "smartcitybcn-2026",
+    title: "Building the Future of Urban Intelligence with Digital Twins",
     description:
-      "Public panel on data ownership, equity, and the politics of urban technology.",
-    date: "2024",
-    category: "Panels & Public Events",
-    tags: ["Panel", "Equity"],
+      "Presenting the City4Climate project advancements",
+    date: "2026",
+    category: "Invited Talks",
+    tags: ["Digital Twins", "Decarbonization"],
     facts: [
-      { label: "Venue", value: "Smart City Expo World Congress" },
-      { label: "Location", value: "Barcelona" },
+      { label: "Event", value: "Smart City World Congress 2026" },
+      { label: "Location", value: "Barcelona (ES)" },
     ],
     body: [
-      "A public panel debating who benefits from urban technology and how cities can keep data accountable to residents.",
+      "Presentation of the City4Climate project advancements, focusing on the role of Digital Twins in shaping the future of urban intelligence and decarbonization.",
     ],
+
   },
+  
   
 
   {
