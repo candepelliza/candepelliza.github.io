@@ -110,4 +110,20 @@ export const selectedWorks = [
       url: "https://www.google.com/maps/d/viewer?mid=1x62AIrMQmdQ0AzggwLYSIPGOV1xoNSAw",
     },
   },
+
+
+    
+  {
+    slug: "degenerando-la-u-podcast",
+    title: "'Degenerando la U' Podcast",
+    description:
+      "Podcast addressing gender inqeualities in the academic and professional work at different disciplines.",
+    date: "2019",
+    tags: ["Podcast", "Feminism"],
+    facts: [{ label: "Role", value: "Creator and Broadcaster" }],
+    body: [
+      " Winner of the 'UNCuyo Students Initiatives Fund",
+    ],
+    link: { label: "Listen at spotify (Spanish only)", url: "https://open.spotify.com/show/1uprihOeIuO25hy3Xd8LDh?si=5c9dda30e0f34ae6" },
+  },
 ];

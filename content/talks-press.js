@@ -21,7 +21,7 @@ export const talksPressCategories = [
 export const talksPress = [
 
     {
-    slug: "panel-smart-port-lx",
+    slug: "smartcitiessummit-smart-port-lx",
     title: "Smart Port Lx ",
     description:
       "Roundtable: Smart Port Lx: Smart Port, Intelligent City – Opportunities and Challenges in the Port-City Relationship",
@@ -36,6 +36,8 @@ export const talksPress = [
       "Panel moderator of the discussion regarding the role of the Smart port Lx project as a catalyzer for the development of the city of Lisbon and its port, and the opportunities and challenges of the port-city relationship.",
     ],
     link: { label: "Slides", url: "#" },
+    image: "/public/images/smartcitiessummit-smart-port-lx-hero.jpg",
+    gallery: "/public/images/smartcitiessummit-smart-port-lx-01.jpg",
   },
 
   {
@@ -57,7 +59,7 @@ export const talksPress = [
   },
 
   {
-    slug: "smartcitybcn-2026",
+    slug: "smartcitybcn-2025",
     title: "Building the Future of Urban Intelligence with Digital Twins",
     description:
       "Presenting the City4Climate project advancements",
@@ -65,7 +67,7 @@ export const talksPress = [
     category: "Invited Talks",
     tags: ["Digital Twins", "Decarbonization"],
     facts: [
-      { label: "Event", value: "Smart City World Congress 2026" },
+      { label: "Event", value: "Smart City World Congress 2025" },
       { label: "Location", value: "Barcelona (ES)" },
     ],
     body: [
@@ -74,21 +76,6 @@ export const talksPress = [
 
   },
   
-  
 
-  {
-    slug: "degenerando-la-u-podcast",
-    title: "'Degenerando la U' Podcast",
-    description:
-      "Podcast addressing gender inqeualities in the academic and professional work at different disciplines.",
-    date: "2019",
-    category: "Podcasts",
-    tags: ["Podcast", "Feminism"],
-    facts: [{ label: "Role", value: "Creator and Broadcaster" }],
-    body: [
-      " Winner of the 'UNCuyo Students Initiatives Fund",
-    ],
-    link: { label: "Listen at spotify (Spanish only)", url: "https://open.spotify.com/show/1uprihOeIuO25hy3Xd8LDh?si=5c9dda30e0f34ae6" },
-  },
  
 ];
