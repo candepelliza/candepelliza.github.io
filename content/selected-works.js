@@ -11,9 +11,9 @@
 export const selectedWorks = [
   {
     slug: "virarua",
-    title: "ViraRUA: Turning the Street into an Active Urban Refuge",
+    title: "ViraRUA",
     description:
-      "A tactical, low-cost intervention reclaiming a residual street corner in Olaias as a small neighbourhood square.",
+      " Turning the Street into an Active Urban Refuge.A tactical, low-cost intervention reclaiming a residual street corner in Olaias as a small neighbourhood square.",
     date: "2026",
     tags: ["Tactical Urbanism", "Public Space", "Urban Design"],
     image: "/images/virarua-hero.png",
@@ -31,7 +31,7 @@ export const selectedWorks = [
   },
   {
     slug: "estrela-pela-felicidade",
-    title: "Estrela pela Felicidade: A Happiness Indicator for Estrela Parish",
+    title: "Estrela pela Felicidade",
     description:
       "A multidimensional happiness and quality-of-life indicator combining objective data with a survey of 400 residents.",
     date: "2025",
@@ -57,7 +57,7 @@ export const selectedWorks = [
 
   {
     slug: "portugal-distante",
-    title: "Portugal Distante — Accessibility Analysis for Expresso",
+    title: "Portugal Distante",
     description:
       "A geospatial study of territorial inequalities in access to essential services across mainland Portugal, for Expresso's investigative series.",
     date: "2025",
@@ -109,6 +109,21 @@ export const selectedWorks = [
       label: "View the collective map",
       url: "https://www.google.com/maps/d/viewer?mid=1x62AIrMQmdQ0AzggwLYSIPGOV1xoNSAw",
     },
+  },
+
+    {
+    slug: "scrap-uber-eats",
+    title: "Scrapping Uber Eats Data",
+    description:
+      "A python code for scraping data about Uber Eats restaurants in London.",
+    date: "2019",
+    tags: ["Geospatial", "Data Science"],
+    facts: [{ label: "Role", value: "Creator and Broadcaster" }],
+    body: [
+      "This project was developed with the aim of scraping data about Uber Eats restaurants in London for research purposes. The code is written in Python and uses web scraping techniques to collect information such as restaurant names, locations, ratings, and other relevant details from the Uber Eats platform.",
+    ],
+    image: "/images/scrappingubereats.png",
+    link: { label: "See the code at the GitHub repository", url: "https://github.com/candepelliza/Scraping-Uber-Eats-London" },
   },
 
 

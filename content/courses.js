@@ -2,20 +2,24 @@
 // CAPACITY BUILDING → Academic Courses
 export const courses = [
   {
-    period: "2021 — Present",
-    title: "Urban Innovation & Digital Cities",
-    meta: "Graduate Seminar · University of Lisbon",
+    period: "2025 - Present",
+    title: "Smart and Sustainable Cities",
+    meta: "NOVA IMS, Universidade NOVA de Lisboa (PT)",
     description:
-      "A studio-based course on technology, data, and the future of urban governance.",
+      "Invited Assistant Professor",
   },
   {
-    period: "2019 — Present",
-    title: "Foundations of Spatial Planning",
-    meta: "Undergraduate · University of Lisbon",
+    period: "2025 - Present",
+    title: "Geospatial Intelligence",
+    meta: "NOVA IMS, Universidade NOVA de Lisboa (PT)",
+    description:
+      "Invited Assistant Professor",
   },
   {
-    period: "2020 — 2022",
-    title: "Participatory Methods in Planning",
-    meta: "Masterclass · TU Delft",
+    period: "2019 - 2020 & 2022",
+    title: "Bachelor course 'Anthropological Analysis of Habitat'",
+    meta: "Universidad Nacional de Cuyo (ARG)",
+    description:
+  "Invited Assistant Professor",
   },
 ];

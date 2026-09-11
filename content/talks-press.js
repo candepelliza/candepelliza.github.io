@@ -22,7 +22,7 @@ export const talksPress = [
 
     {
     slug: "smartcitiessummit-smart-port-lx",
-    title: "Smart Port Lx ",
+    title: "Smart Port Lx: Opportunities and Challenges in the Port-City Relationship ",
     description:
       "Roundtable: Smart Port Lx: Smart Port, Intelligent City – Opportunities and Challenges in the Port-City Relationship",
     date: "2026",
@@ -36,8 +36,8 @@ export const talksPress = [
       "Panel moderator of the discussion regarding the role of the Smart port Lx project as a catalyzer for the development of the city of Lisbon and its port, and the opportunities and challenges of the port-city relationship.",
     ],
     link: { label: "Slides", url: "#" },
-    image: "/public/images/smartcitiessummit-smart-port-lx-hero.jpg",
-    gallery: ["/public/images/smartcitiessummit-smart-port-lx-01.jpg"],
+    image: "/images/smartcitiessummit-smart-port-lx-hero.jpg",
+    gallery: ["/images/smartcitiessummit-smart-port-lx-01.jpg"],
   },
 
   {
