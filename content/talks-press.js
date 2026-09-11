@@ -37,7 +37,7 @@ export const talksPress = [
     ],
     link: { label: "Slides", url: "#" },
     image: "/public/images/smartcitiessummit-smart-port-lx-hero.jpg",
-    gallery: "/public/images/smartcitiessummit-smart-port-lx-01.jpg",
+    gallery: ["/public/images/smartcitiessummit-smart-port-lx-01.jpg"],
   },
 
   {
