@@ -12,7 +12,6 @@ export const site = {
   /** Used as the default meta description across the site. */
   metaDescription:
     "Editorial portfolio of Candela Sol Pelliza — urban planner and researcher working across urban innovation, technology, consultancy, and academic work.",
-  email: "cande.pelliza@gmail.com",
   location: "Lisbon, Portugal",
   portraitImage: "/images/portrait.jpg",
   socials: [

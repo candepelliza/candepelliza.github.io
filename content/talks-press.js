@@ -35,7 +35,26 @@ export const talksPress = [
     body: [
       "Panel moderator of the discussion regarding the role of the Smart port Lx project as a catalyzer for the development of the city of Lisbon and its port, and the opportunities and challenges of the port-city relationship.",
     ],
-    link: { label: "Slides", url: "#" },
+   
+  },
+
+      {
+    slug: "data-dts-urbandecision",
+    title: "Data, Digital Twins & Urban Decision Support ",
+    description:
+      "Roundtable: 'Data, Digital Twins & Urban Decision Support'",
+    date: "2026",
+    category: "Panel Moderator",
+    tags: ["Digital Twins", "NexTCity"],
+    facts: [
+      { label: "Event", value: "NexTCity Networking Event 2026" },
+      { label: "Location", value: "Lisbon (PT)" },
+    ],
+    body: [
+      "Panel moderator of the roundtable held in the context of the NexTCity Networking Event 2026, discussing the role of geographic data and digital twins in supporting urban decision-making and planning processes.",
+    ],
+    image: "/images/rt-dts-hero.jpg",
+    gallery: ["/images/rt-dts-1.jpg", "/images/rt-dts-2.jpg", "/images/rt-dts-3.jpg"],
    
   },
 

@@ -27,6 +27,8 @@ export const workshops = [
       label: "Access the workshop materials",
       url: "https://github.com/novacidade-org/H3_Workshop_SS",
     },
+    image: "/images/h3-hero.png",
+    gallery: ["/images/h3-1.png", "/images/h3-2.png", "/images/h3-3.png"],
   },
   {
     slug: "participatory-mapping-smarter-cities",
@@ -44,6 +46,8 @@ export const workshops = [
       "Facilitated at the GeoMundus Conference 2025, this workshop explored participatory and collective mapping as an approach to building smarter, more equitable, and more inclusive cities.",
       "It combined community knowledge and citizen-generated data with digital mapping tools, giving participants a hands-on introduction to how collaborative mapping can surface a shared, lived reading of urban space.",
     ],
+
+    image: "/images/h3-hero.png",
   },
   
 ];
