@@ -672,8 +672,10 @@ main {
 }
 /* Index-row / card plate: fills whatever height .index-row-plate gives it
    (see the bleed rule above) so the image reads as a wide, attention-
-   grabbing plate rather than a small 4:3 thumbnail. Stays 4:3 on mobile,
-   where it's simply full-row-width, inline below the text. */
+   grabbing plate rather than a small 4:3 thumbnail. Same height as before
+   at each breakpoint, but the wider column makes it read as a wide, cropped
+   plate instead of a small 4:3 thumbnail. Stays 4:3 on mobile, where it's
+   full-row-width, inline below the text. */
 .ratio-plate {
   aspect-ratio: 4 / 3;
   width: 100%;
@@ -681,8 +683,18 @@ main {
 @media (min-width: 768px) {
   .ratio-plate {
     aspect-ratio: auto;
+@media (min-width: 768px) {
+  .ratio-plate {
+    aspect-ratio: auto;
     height: 100%;
     width: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .ratio-plate {
+    height: 15.75rem;
+  }
+}
   }
 }
 
