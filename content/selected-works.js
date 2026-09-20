@@ -62,17 +62,18 @@ export const selectedWorks = [
     slug: "portugal-distante",
     title: "Portugal Distante",
     description:
-      "A geospatial study of territorial inequalities in access to essential services across mainland Portugal, for Expresso's investigative series.",
+      "A geospatial study of territorial inequalities in access to essential services across mainland Portugal, for Expresso Journal investigative series.",
     date: "2025",
     tags: ["Accessibility", "Geospatial Analysis", "Data Journalism"],
-    image: "/images/portugal-distante-hero.png",
+    image: "/images/expresso-hero.jfif",
+    gallery: ["/images/expresso-1.jfif", "/images/expresso-2.jfif"],
     facts: [
       { label: "Role", value: "Coordination, methodology & geospatial analysis" },
       { label: "Context", value: "NOVA Cidade — Urban Analytics Lab, NOVA IMS" },
       { label: "Partner", value: "Expresso newspaper" },
     ],
     body: [
-      "Portugal Distante analyses territorial inequalities in access to basic services across mainland Portugal. Developed in partnership with the Expresso newspaper, the analysis supported a journalistic series examining accessibility to essential services such as healthcare, education, culture, and ATMs.",
+      "Portugal Distante analyses territorial inequalities in access to basic services across mainland Portugal. Developed in partnership with the Expresso Newspaper, one of the main journals in portugal, the analysis supported a journalistic series examining accessibility to essential services such as healthcare, education, culture, and ATMs.",
       "The work designed and implemented a geospatial accessibility methodology to measure both distance and real travel time by car from each statistical subsection in mainland Portugal to the nearest service location. Working from geolocated datasets, it generated accessibility indicators for hospitals and emergency services, schools, cultural facilities, and ATMs, making spatial patterns of isolation and unequal service provision visible.",
       "My contribution spanned coordinating the analytical workflow, developing the methodology, writing and running the geospatial code, validating the data, and producing the accessibility results behind the published pages. These were interpreted together with the journalist to identify the most critical areas and shape the narrative. The series had national visibility, showing how geographic distance and travel time drive unequal access to essential services across the country.",
     ],

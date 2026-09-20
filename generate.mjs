@@ -21,7 +21,7 @@ import { talksPress, talksPressCategories } from "./content/talks-press.js";
 import { professionalExperience } from "./content/professional-experience.js";
 import { education } from "./content/education.js";
 import { awards } from "./content/awards.js";
-import { professionalDevelopment } from "./content/professional-development.js";
+// import { professionalDevelopment } from "./content/professional-development.js";
 import { publications } from "./content/publications.js";
 import { thesisSupervisions } from "./content/thesis-supervisions.js";
 import { researchProjects } from "./content/research-projects.js";
@@ -566,8 +566,8 @@ writePage(
       pageHeader("curriculum vitae", site.aboutPreview) +
       sectionBlock("Professional Experience", professionalExperience, 1) +
       sectionBlock("Education", education, 1) +
-      sectionBlock("Awards", awards, 1) +
-      sectionBlock("Academic & Professional Development", professionalDevelopment, 1),
+      sectionBlock("Awards", awards, 1), // +
+      // sectionBlock("Academic & Professional Development", professionalDevelopment, 1),
   })
 );
 
