@@ -14,12 +14,7 @@ export const site = {
     "Editorial portfolio of Candela Sol Pelliza — urban planner and researcher working across urban innovation, technology, consultancy, and academic work.",
   email: "cande.pelliza@gmail.com",
   location: "Lisbon, Portugal",
-  /**
-   * Optional portrait image on the home hero.
-   * Place the file in /public (e.g. "/images/portrait.jpg"). Leave undefined
-   * to show the neutral hatched placeholder.
-   */
-  portraitImage: undefined,
+  portraitImage: "/images/portrait.jpg",
   socials: [
     { label: "LinkedIn", url: "https://www.linkedin.com/in/candelasolpelliza/" },
     {

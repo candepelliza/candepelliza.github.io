@@ -36,8 +36,7 @@ export const talksPress = [
       "Panel moderator of the discussion regarding the role of the Smart port Lx project as a catalyzer for the development of the city of Lisbon and its port, and the opportunities and challenges of the port-city relationship.",
     ],
     link: { label: "Slides", url: "#" },
-    image: "/images/smartcitiessummit-smart-port-lx-hero.jpg",
-    gallery: ["/images/smartcitiessummit-smart-port-lx-01.jpg"],
+   
   },
 
   {
@@ -73,6 +72,8 @@ export const talksPress = [
     body: [
       "Presentation of the City4Climate project advancements, focusing on the role of Digital Twins in shaping the future of urban intelligence and decarbonization.",
     ],
+    image: "/images/smartexpo-smart-port-lx-hero.jpg",
+    gallery: ["/images/smartexpo-smart-port-lx-01.jpg"],
 
   },
   
