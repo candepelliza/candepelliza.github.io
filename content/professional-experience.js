@@ -3,8 +3,15 @@
 // Add a new role by appending an object. Newest first.
 export const professionalExperience = [
   {
+    period: "2026",
+    title: "Independent Consultant",
+    meta: "Remote for an Argentinian Smart City Consultancy",
+    description:
+      "Led a full methodological audit and redesign of a composite Smart City diagnostic index used to benchmark Argentine municipalities. Diagnosed structural flaws in scoring, data validity, and cross-city comparability, then designed a new framework and Index calculation system. Delivered findings and proposals directly to the client through written reports, a board-level presentation, and a phased commercialization roadmap.",
+  },
+  {
     period: "Sep. 2024 — Present",
-    title: "Research Assistant and Project Management Coordinator",
+    title: "Research Assistant & Project Manager",
     meta: "NOVA Cidade Urban Analytics Lab (NOVA IMS), Lisbon (PT)",
     description:
       "Led activities development in EU-funded and national research consortiums on digital twins and decarbonisation. Designed and applied research methodologies combining statistical analysis, geospatial methods, and AI to investigate urban dynamics, people-centered cities and governance implications of data-driven urban systems. Led the development of funding applications, proposals, research deliverables, co-creation and capacity-building activities.",
@@ -31,8 +38,8 @@ export const professionalExperience = [
   },
   {
     period: "Dec. 2023 — Mar. 2024",
-    title: "Urban Data Scientist — Contractor",
-    meta: "State of Place, Remote work for US",
+    title: "Urban Data Scientist",
+    meta: "State of Place, Remote contractor work for US",
     description:
       "Developed statistical models for transportation, walkability, demographics, and real estate across 100+ US neighborhoods, automating data acquisition, processing, analysis, visualization and reporting workflows for spatial data at scale.",
     link: { label: "State of Place", url: "https://stateofplace.co/" },

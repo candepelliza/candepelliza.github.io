@@ -20,15 +20,15 @@ export const workshops = [
       { label: "Location", value: "Lisbon (PT)" },
     ],
     body: [
-      "This workshop, facilitated at the NexTCity Summer School 2026, introduced the H3 hexagonal grid — an open, hierarchical geospatial indexing system — and explored why hexagonal tiling is such a useful way to represent space.",
-      "Through hands-on exercises, participants worked with H3 to aggregate, analyse, and map spatial data across different scales, building an intuition for how the grid can support urban analytics and city-scale mapping.",
+      "This workshop, facilitated at the NexTCity Summer School 2026, introduced the H3 hexagonal grid, an open, hierarchical geospatial indexing system, and explored why hexagonal tiling is such a useful way to represent space.",
+      "The workshop combined a theoretical introduction to the H3 system, with a crafty hands-on workshop to understand in practice how hexagons are used to map the world, and a python-based exercises' session to learn how to use the h3-py library to generate and manipulate H3 grids, and to perform spatial analysis on real-world datasets.",
     ],
     link: {
       label: "Access the workshop materials",
       url: "https://github.com/novacidade-org/H3_Workshop_SS",
     },
-    image: "/images/h3-hero.png",
-    gallery: ["/images/h3-1.png", "/images/h3-2.png", "/images/h3-3.png"],
+    image: "/images/h3-hero.jpg",
+    gallery: ["/images/h3-1.jpg", "/images/h3-2.jpg", "/images/h3-3.jpg"],
   },
   {
     slug: "participatory-mapping-smarter-cities",
@@ -47,7 +47,7 @@ export const workshops = [
       "It combined community knowledge and citizen-generated data with digital mapping tools, giving participants a hands-on introduction to how collaborative mapping can surface a shared, lived reading of urban space.",
     ],
 
-    image: "/images/h3-hero.png",
+    image: "/images/h3-hero.jpg",
   },
   
 ];

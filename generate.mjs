@@ -169,8 +169,6 @@ function footer(depth) {
     <div class="container">
       <div class="footer-grid">
         <div>
-          <p class="footer-label">[ get in touch ]</p>
-          <a href="mailto:${esc(site.email)}" class="footer-email">${esc(site.email)}</a>
           <p class="footer-location mono-type">${esc(site.location)}</p>
         </div>
         <div class="footer-cols">

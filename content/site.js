@@ -2,16 +2,16 @@
 // Edit these values to update the header, footer, home hero, and SEO.
 export const site = {
   name: "Candela Sol Pelliza",
-  role: "Urban Planner & Researcher",
+  role: "Urban Innovator, Researcher, and Consultant",
   /** Short tagline shown on the home hero. */
   tagline:
-    "Working at the intersection of urban planning, technology, and research — designing more livable, equitable, and innovative cities.",
+    "Working at the intersection of urban innovation, sustainability, technology, and research, aiming to contribute to more livable, resilient, equitable, and innovative cities.",
   /** Short About-me preview shown on the home page. */
   aboutPreview:
-    "I am an urban planner, researcher, and consultant focused on urban innovation and the role of technology in shaping cities. Over the past decade I have led planning strategies, taught at universities, advised public institutions, and published research on participatory and data-driven urbanism. My work moves between practice and academia — bridging policy, design, and people.",
+    "I am an urban planner, researcher, and consultant focused on urban innovation, liveable cities and the role of technology in shaping cities. Over the past years I have coordinated international research projects, led geospatial projects, taught at universities, published academic work andadvised public and private institutions. My work moves between practice and academia, bridging policy, design, and coommunities.",
   /** Used as the default meta description across the site. */
   metaDescription:
-    "Editorial portfolio of Candela Sol Pelliza — urban planner and researcher working across urban innovation, technology, consultancy, and academic work.",
+    "Candela Sol Pelliza — urban planner and researcher working across urban innovation, technology, consultancy, and academic work.",
   location: "Lisbon, Portugal",
   portraitImage: "/images/portrait.jpg",
   socials: [
