@@ -102,6 +102,36 @@ function imageSlot({ src, alt, label, ratio, depth, grayscale = false }) {
     </div>`;
 }
 
+// A hero image slot that becomes an auto-advancing gallery when more than
+// one image is supplied (e.g. a project's `image` + `gallery` combined).
+// Falls back to a single static image (or the placeholder) otherwise.
+function heroGallery({ images, alt, label, ratio, depth }) {
+  const imgs = (images || []).filter(Boolean);
+  if (imgs.length === 0) {
+    return `<div class="placeholder ${ratio}" role="img" aria-label="${esc(alt)}">
+      <span class="ph-tl mono-type">Fig.</span>
+      <span class="ph-br meta-type">\u25CB ${esc(label || "Image")}</span>
+      <span class="mono-type">${esc(label || "Image")}</span>
+    </div>`;
+  }
+  if (imgs.length === 1) {
+    return `<div class="frame ${ratio}"><img src="${resolveUrl(imgs[0], depth)}" alt="${esc(alt)}" loading="lazy"></div>`;
+  }
+  const slides = imgs
+    .map((src, i) => {
+      const slideAlt = i === 0 ? alt : `${alt} \u2014 image ${i + 1}`;
+      return `<img src="${resolveUrl(src, depth)}" alt="${esc(slideAlt)}" loading="lazy" class="slide${i === 0 ? " is-active" : ""}">`;
+    })
+    .join("");
+  const dots = imgs
+    .map((_, i) => `<span class="dot${i === 0 ? " is-active" : ""}"></span>`)
+    .join("");
+  return `<div class="frame ${ratio} gallery-frame" data-gallery data-interval="4500">
+      ${slides}
+      <div class="gallery-dots" aria-hidden="true">${dots}</div>
+    </div>`;
+}
+
 function header(active, depth) {
   const links = (cls) =>
     navItems
@@ -231,7 +261,7 @@ function indexRowInner({ period, title, meta, description, tags, details, size, 
         }
       </div>`;
   const platehtml = hasPlate
-    ? `<div class="index-row-plate reveal"${rd(1)}>${imageSlot({ src: image, alt: title, label: "Plate", ratio: "ratio-4x3", depth, grayscale: true })}</div>`
+    ? `<div class="index-row-plate reveal"${rd(1)}>${imageSlot({ src: image, alt: title, label: "Plate", ratio: "ratio-plate", depth })}</div>`
     : "";
   return `${main}${platehtml}`;
 }
@@ -259,7 +289,7 @@ function staticEntryList(entries, depth) {
     </div>`;
     })
     .join("");
-  return `<div class="index-list">${rows}</div>`;
+  return `<div class="index-list two-col">${rows}</div>`;
 }
 
 function horizontalCard(entry, section, depth) {
@@ -310,20 +340,6 @@ function pageHeader(title, intro) {
 }
 
 function cardDetail(entry, { backTo, backLabel, label }, depth) {
-  const gallery =
-    entry.gallery && entry.gallery.length
-      ? `<div class="detail-gallery">${entry.gallery
-          .map((src, i) =>
-            imageSlot({
-              src,
-              alt: `${entry.title} — image ${i + 1}`,
-              label: `Fig. ${i + 1}`,
-              ratio: "ratio-16x10",
-              depth,
-            })
-          )
-          .join("")}</div>`
-      : "";
   const body = entry.body.map((p) => `<p class="reveal">${esc(p)}</p>`).join("");
   const link = entry.link
     ? `<a href="${resolveUrl(entry.link.url, depth)}" ${isExternal(entry.link.url) ? 'target="_blank" rel="noreferrer"' : ""} class="mono-type link-underline detail-link">${esc(entry.link.label)} \u2192</a>`
@@ -349,8 +365,7 @@ function cardDetail(entry, { backTo, backLabel, label }, depth) {
       </div>
     </header>
     <div class="container">
-      <div class="detail-hero reveal">${imageSlot({ src: entry.image, alt: entry.title, label: entry.category || "Plate", ratio: "ratio-16x9", depth })}</div>
-      ${gallery}
+      <div class="detail-hero reveal">${heroGallery({ images: [entry.image, ...(entry.gallery || [])], alt: entry.title, label: entry.category || "Plate", ratio: "ratio-16x9", depth })}</div>
       <div class="detail-body-grid">
         <div class="detail-body">
           ${body}
@@ -550,7 +565,7 @@ writePage(
     depth: 1,
     active: "/cv",
     body:
-      pageHeader("cv", site.aboutPreview) +
+      pageHeader("curriculum vitae", site.aboutPreview) +
       sectionBlock("Professional Experience", professionalExperience, 1) +
       sectionBlock("Education", education, 1) +
       sectionBlock("Awards", awards, 1) +
