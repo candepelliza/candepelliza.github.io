@@ -1,5 +1,11 @@
 
 // RESEARCH → Research Projects (STATIC — inline only, no detail pages)
+//
+// Each entry can optionally include a hero image, shown as a wide plate next
+// to the text (same treatment as the project cards elsewhere on the site):
+//   image: "/images/nextcity-hero.jpg"
+// Put the file in /public/images and reference it with a root-relative path.
+// Omit `image` to keep the plain text-only row.
 export const researchProjects = [
   {
     period: "2024 — 2027",

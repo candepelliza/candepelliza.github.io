@@ -36,9 +36,11 @@ simple list of objects. To change something, edit the object and rebuild.
 
 Two shapes of entry:
 
-- **Static entries** (`period`, `title`, `meta`, `description`, `tags`, `link`)
-  render as index-list rows and do **not** create a detail page. Used for CV,
-  research lists, courses, guest lectures, teaching materials.
+- **Static entries** (`period`, `title`, `meta`, `description`, `tags`, `link`,
+  optional `image`) render as index-list rows and do **not** create a detail
+  page. Used for CV, research lists, courses, guest lectures, teaching
+  materials. Add `image` to show a wide hero plate next to the text (e.g. for
+  a Research Project) — omit it to keep a plain text-only row.
 - **Card entries** (`slug`, `title`, `description`, `date`, `tags`, `image`,
   `gallery`, `body`, `facts`, `link`) render as big index rows **and generate a
   detail page** at `/<collection>/<slug>`. Used for Selected Works, Workshops,
@@ -70,8 +72,10 @@ Append an object to the `selectedWorks` array in `content/selected-works.js`:
 
 Put the file in `public/images/`, then reference it with a root-relative path
 starting with `/images/…`. PDFs go in `public/files/` and are referenced as
-`/files/…`. Card thumbnails are shown in grayscale by design; detail-page hero
-images keep their colour.
+`/files/…`. Card thumbnails and detail-page hero images are shown in full
+colour. On a detail page, if a card entry has a `gallery` array, its images
+combine with `image` into an auto-advancing slideshow in the hero; with no
+`gallery`, the hero is a single static image.
 
 ## Build
 

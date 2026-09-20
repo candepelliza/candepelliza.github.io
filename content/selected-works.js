@@ -5,8 +5,11 @@
 // IMAGES:
 // - Image files live in /public/images and are referenced with a
 //   root-relative path, e.g. image: "/images/estrela-hero.png".
-// - `image` is the thumbnail used on the card and as the detail-page hero.
-// - `gallery` is an optional array of extra images shown on the detail page.
+// - `image` is the thumbnail used on the card and the first hero image on
+//   the detail page.
+// - `gallery` is an optional array of extra images. Together with `image`,
+//   they auto-rotate as a slideshow in the detail-page hero — add more than
+//   one to get the changing gallery; leave it out for a single static image.
 // - Downloadable files (PDFs) live in /public/files.
 export const selectedWorks = [
   {
