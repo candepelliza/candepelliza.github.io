@@ -78,26 +78,36 @@ export const talksPress = [
     link: { label: "Digital twins", url: "Urban innovation" },
   },
 
-  {
+   {
     slug: "smartcitybcn-2025",
     title: "Building the Future of Urban Intelligence with Digital Twins",
-    description:
-      "Presenting the City4Climate project advancements",
-    date: "2026",
+    description: "Presenting the City4Climate project advancements",
+    date: "2025", // congress took place 4–6 November 2025
     category: "Invited Talks",
     tags: ["Digital Twins", "Decarbonization"],
     facts: [
-      { label: "Event", value: "Smart City World Congress 2025" },
+      { label: "Event", value: "Smart City Expo World Congress 2025" },
+      { label: "Date", value: "4–6 November 2025" },
       { label: "Location", value: "Barcelona (ES)" },
+      { label: "Format", value: "Roundtable" },
+      { label: "Project", value: "City4Climate" },
+      {
+        label: "Participants",
+        value:
+          "Candela Sol Pelliza (NOVA Cidade, NOVA IMS); Ana Pereira (Ubiwhere); Nuno Soares (CCG/ZGDV Institute); João Bastos (Porto Digital)",
+      },
+      { label: "Moderator", value: "Adeeb Sidani" },
     ],
     body: [
-      "Presentation of the City4Climate project advancements, focusing on the role of Digital Twins in shaping the future of urban intelligence and decarbonization.",
+      "The Smart City Expo World Congress is one of the leading international events on smart cities, urban innovation and sustainability. The 2025 edition brought together 1,100 exhibitors and 27,000 participants from 143 countries.",
+      "Within the City4Climate project, coordinated by NOVA Cidade – Urban Analytics Lab (NOVA IMS), a roundtable was held on climate governance and the role of digital twins. Partners Ubiwhere, CCG/ZGDV Institute and Porto Digital joined the discussion.",
+      "The session focused on three themes. The first was digital twins as tools to support local climate governance. The second was system architecture and data integration through open standards such as NGSI-LD and FIWARE. The third was Climate City Contracts as a strategic instrument for local decarbonisation, in line with the EU Cities Mission.",
+      "The project's progress was presented in three areas: the development of the system architecture, the implementation of Climate City Contracts in Porto, Lisbon and Guimarães, and early results in the integration, simulation and visualisation of urban data.",
+      "A dedicated stand showcased early versions of the open-source digital twin framework, along with real-time dashboards and analytical tools.",
     ],
     image: "/images/c4c-scexpo-hero.jpg",
     gallery: ["/images/c4c-scexpo-01.jpg", "/images/c4c-scexpo-02.jpg"],
-
   },
-  
 
  
 ];
