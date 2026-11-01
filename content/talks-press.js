@@ -20,6 +20,26 @@ export const talksPressCategories = [
 
 export const talksPress = [
 
+  
+    {
+    slug: "polis-2026",
+    title: "POLIS x NOVA - Mobility & Digital Twins",
+    description:
+      "POLIS x NOVA Conference: Mobility & Digital Twins",
+    date: "2026",
+    category: "Invited Talks",
+    tags: ["Smart City", "Roundtable", "Digital Twins", "Mobility"],
+    facts: [
+      { label: "Event", value: "NOVA x POLIS: Mobility & Digital Twins 2026" },
+      { label: "Location", value: "Lisbon (PT)" },
+    ],
+    body: [
+      "Presenting the role of Digital Twins in supporting mobility and urban planning, as part of the roundtable discussion at the POLIS x NOVA Conference. My talk introduced the role of Digital Twins as part of a bigger mobility governance ecosystem and introduced the practical examples of the NexTCity and City4Climate Digital Twins, and their mobility use-cases",
+    ],
+    image: "/images/polis-2026-hero.jpg",
+    gallery: ["/images/polis-2026-hero.jpg"],
+   
+  },
     {
     slug: "smartcitiessummit-smart-port-lx",
     title: "Smart Port Lx: Opportunities and Challenges in the Port-City Relationship ",
